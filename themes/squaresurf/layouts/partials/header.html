@@ -27,7 +27,6 @@
   <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
   <!-- Favicons -->
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="icon" href="/img/favicon.ico">
   <!-- Generator -->
   <meta name="generator" content="Hugo {{ .Hugo.Version }}">
@@ -37,20 +36,20 @@
 <body class="{{if eq .Kind `page` }}single{{else}}list{{end}}">
   <header class="header">
     {{ if .IsHome }}
-    <h1 class="title"><a href="{{ `/` }}"><span>🍱</span>{{ .Site.Title }}</a></h1>
+    <h1 class="title"><a href="{{ `/` }}"><span><img src="/img/logo.png" /></span>{{ .Site.Title }}</a></h1>
     {{ else }}
-    <p class="title"><a href="{{ `/` }}"><span>🍱</span>{{ .Site.Title }}</a></p>
+    <p class="title"><a href="{{ `/` }}"><span><img src="/img/logo.png" /></span>{{ .Site.Title }}</a></p>
     {{ end }}
-    <button class="menu-toggle" type="button"></button>
-    <nav class="menu">
-      <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        <li class="{{ if $currentPage.IsMenuCurrent `main` . }}active{{ end }}">
-          <a href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
+    <!-- <button class="menu-toggle" type="button"></button> -->
+    <!-- <nav class="menu"> -->
+    <!--   <ul> -->
+    <!--     {{ $currentPage := . }} -->
+    <!--     {{ range .Site.Menus.main }} -->
+    <!--     <li class="{{ if $currentPage.IsMenuCurrent `main` . }}active{{ end }}"> -->
+    <!--       <a href="{{ .URL }}">{{ .Name }}</a> -->
+    <!--     </li> -->
+    <!--     {{ end }} -->
+    <!--   </ul> -->
+    <!-- </nav> -->
   </header>
   <main class="main">

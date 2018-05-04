@@ -84,8 +84,10 @@ pre, code {
 }
 .title span {
   display: inline-block;
-  margin-right: 10px;
-  transform: translateY(1px);
+  margin-right: 6px;
+}
+.title span img {
+  vertical-align: baseline;
 }
 .menu-toggle {
   display: none;
