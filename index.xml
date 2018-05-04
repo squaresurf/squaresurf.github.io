@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SquareSurf</title>
+    <link>https://squaresurf.github.io/</link>
+    <description>Recent content on SquareSurf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 May 2018 23:13:22 -0700</lastBuildDate>
+    
+	<atom:link href="https://squaresurf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World Round 2</title>
+      <link>https://squaresurf.github.io/posts/2018/05/03/hello-world-round-2/</link>
+      <pubDate>Thu, 03 May 2018 23:13:22 -0700</pubDate>
+      
+      <guid>https://squaresurf.github.io/posts/2018/05/03/hello-world-round-2/</guid>
+      <description>&lt;p&gt;Hello world! The most basic thing done by many a fledgling programmer. It&amp;rsquo;s probably also the most overused topic to
+write about as your first blog topic as a programmer. That being said, I couldn&amp;rsquo;t think of a better way to start a new
+blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
