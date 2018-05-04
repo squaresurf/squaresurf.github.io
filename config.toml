@@ -1,0 +1,4 @@
+baseURL = "https://squaresurf.github.io/"
+languageCode = "en-us"
+title = "SquareSurf"
+theme = "paper"
