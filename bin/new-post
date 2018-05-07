@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if [[ -z "$1" ]]; then
-  echo "Missing post filename argument!"
-  exit 1
-fi
-
-hugo new posts/$(date +%Y/%m/%d)/$1
