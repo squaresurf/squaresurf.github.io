@@ -10,6 +10,15 @@ Ways to improve the blog.
 - Add ability to easily generate and include graphs from data sets.
 - Add Google Analytics.
 - Add categories to theme.
+- Custom theme.
+- Audit theme javascript.
+
+## Crosslinks
+
+### "Hugo With Latex"
+- Category: Data Science
+- Category: Math
+- Post: How to Hugo
 
 ## Post Ideas
 
@@ -17,3 +26,4 @@ Ways to improve the blog.
 - `git worktree` (include issue when dir is deleted)
 - data-science-graphs-workflow
 - hugo-latex
+- Drawing helices with matplotlib
