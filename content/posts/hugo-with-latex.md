@@ -1,5 +1,5 @@
 ---
-title: "Hugo With Latex"
+title: "Hugo with Latex"
 date: 2018-05-08T06:40:47-07:00
 categories: ["blogging", "math"]
 tags: ["hugo", "katex", "latex"]
