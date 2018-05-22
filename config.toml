@@ -6,3 +6,4 @@ title = "SquareSurf"
 [Params]
   author = "Daniel Paul Searles"
   description = "A blog for github user squaresurf with topics mostly ranging from Data Science to Functional Programming."
+  pygmentsUseClasses = true
