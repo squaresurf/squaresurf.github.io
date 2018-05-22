@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SquareSurf</title>
-    <link>https://squaresurf.github.io/</link>
-    <description>Recent content on SquareSurf</description>
+    <title>Math on SquareSurf</title>
+    <link>https://squaresurf.github.io/categories/math/</link>
+    <description>Recent content in Math on SquareSurf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 08 May 2018 06:40:47 -0700</lastBuildDate>
     
-	<atom:link href="https://squaresurf.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://squaresurf.github.io/categories/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,19 +24,6 @@ However, one thing not set up out of the box is the ability to include &lt;a hre
 need &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; when talking about Data Science as well as multiple other Math topics, we will update our setup to have the
 ability to write &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; with &lt;a href=&#34;https://khan.github.io/KaTeX/&#34;&gt;KaTeX&lt;/a&gt;, a fast TeX math renderer for the web.
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello World Round 2</title>
-      <link>https://squaresurf.github.io/posts/hello-world-round-2/</link>
-      <pubDate>Thu, 03 May 2018 23:13:22 -0700</pubDate>
-      
-      <guid>https://squaresurf.github.io/posts/hello-world-round-2/</guid>
-      <description>&lt;p&gt;Hello world! The most basic thing done by many a fledgling programmer. It&amp;rsquo;s probably also the most overused topic to
-write about as your first blog topic as a programmer. That being said, I couldn&amp;rsquo;t think of a better way to start a new
-blog.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

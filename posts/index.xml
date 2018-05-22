@@ -6,10 +6,25 @@
     <description>Recent content in Posts on SquareSurf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 May 2018 23:13:22 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 08 May 2018 06:40:47 -0700</lastBuildDate>
     
 	<atom:link href="https://squaresurf.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo with Latex</title>
+      <link>https://squaresurf.github.io/posts/hugo-with-latex/</link>
+      <pubDate>Tue, 08 May 2018 06:40:47 -0700</pubDate>
+      
+      <guid>https://squaresurf.github.io/posts/hugo-with-latex/</guid>
+      <description>&lt;p&gt;As you may have already noticed, I am using &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; to generate this blog. &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; gives me many benefits right out of the
+box, which include, the ability to author with markdown, create shortcodes for writing (more on this in a moment), the
+ability to blog without a database, not to mention &lt;a href=&#34;https://pages.github.com/&#34;&gt;host the site quickly on GitHub&lt;/a&gt;.
+However, one thing not set up out of the box is the ability to include &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; in your blog posts. Since this blog will
+need &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; when talking about Data Science as well as multiple other Math topics, we will update our setup to have the
+ability to write &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; with &lt;a href=&#34;https://khan.github.io/KaTeX/&#34;&gt;KaTeX&lt;/a&gt;, a fast TeX math renderer for the web.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hello World Round 2</title>

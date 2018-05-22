@@ -6,9 +6,28 @@
     <description>Recent content in Categories on SquareSurf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 08 May 2018 06:40:47 -0700</lastBuildDate>
     
 	<atom:link href="https://squaresurf.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://squaresurf.github.io/categories/blogging/</link>
+      <pubDate>Tue, 08 May 2018 06:40:47 -0700</pubDate>
+      
+      <guid>https://squaresurf.github.io/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://squaresurf.github.io/categories/math/</link>
+      <pubDate>Tue, 08 May 2018 06:40:47 -0700</pubDate>
+      
+      <guid>https://squaresurf.github.io/categories/math/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

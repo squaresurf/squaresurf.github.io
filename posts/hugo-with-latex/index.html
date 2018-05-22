@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Hugo with Latex - SquareSurf</title>
+  
+  <meta name="description" content="As you may have already noticed, I am using hugo to generate this blog. Hugo gives me many benefits right out of the
+box, which include, the ability to author with markdown, create shortcodes for writing (more on this in a moment), the
+ability to blog without a database, not to mention host the site quickly on GitHub.
+However, one thing not set up out of the box is the ability to include LaTeX in your blog posts. Since this blog will
+need LaTeX when talking about Data Science as well as multiple other Math topics, we will update our setup to have the
+ability to write LaTeX with KaTeX, a fast TeX math renderer for the web.
+">
+  <meta name="author" content="Daniel Paul Searles">
+  
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  
+  <link rel="icon" href="/img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.40.3">
+  
+  <link rel="alternate" type="application/atom+xml" href="/index.xml" title="SquareSurf">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="/"><span><img src="/img/logo.png" /></span>SquareSurf</a></p>
+    
+    
+    
+    
+    
+    
+    
+    
+  </header>
+  <main class="main">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">Hugo with Latex</h1>
+    <p class="post-meta">Daniel Paul Searles · 2018.5.8</p>
+  </header>
+  <div class="post-content"><p>As you may have already noticed, I am using <a href="https://gohugo.io/">hugo</a> to generate this blog. <a href="https://gohugo.io/">Hugo</a> gives me many benefits right out of the
+box, which include, the ability to author with markdown, create shortcodes for writing (more on this in a moment), the
+ability to blog without a database, not to mention <a href="https://pages.github.com/">host the site quickly on GitHub</a>.
+However, one thing not set up out of the box is the ability to include <a href="https://www.latex-project.org/">LaTeX</a> in your blog posts. Since this blog will
+need <a href="https://www.latex-project.org/">LaTeX</a> when talking about Data Science as well as multiple other Math topics, we will update our setup to have the
+ability to write <a href="https://www.latex-project.org/">LaTeX</a> with <a href="https://khan.github.io/KaTeX/">KaTeX</a>, a fast TeX math renderer for the web.
+</p>
+
+<p>The ideal workflow will be one where LaTeX can be inserted within our markdown. It will also need to be able to support
+rendering the math inline as well as a block. Here are some examples of how it should work:</p>
+
+<pre><code class="language-md">The constant {{% math %}}\pi{{% /math %}} is useful when working with circles.
+
+The definition of n choose k: {{% math block %}}{n \choose k} = \frac{n!}{k!(n - k)!}{{% /math %}}
+</code></pre>
+
+<p>Now you may be wondering where the <code>{{% math %}}</code> tag is coming from. Well first off, that is in the form of a <a href="https://gohugo.io/content-management/shortcodes/">hugo
+shortcode</a>. Shortcodes are simple snippets inside your content files
+calling built-in or custom templates. We will extend our setup to support a math <a href="https://gohugo.io/templates/shortcode-templates/">custom
+shortcode</a>.</p>
+
+<p>First off add the following to <code>layouts/shorcodes/math.html</code>.</p>
+
+<pre><code class="language-md">{{if eq (.Get 0) &quot;block&quot;}}
+&lt;div class=&quot;math-block&quot;&gt;{{.Inner}}&lt;/div&gt;
+{{else}}
+&lt;span class=&quot;math-inline&quot;&gt;{{.Inner}}&lt;/span&gt;
+{{end}}
+</code></pre>
+
+<p>After that add the following to theme&rsquo;s header:</p>
+
+<pre><code>&lt;!-- KaTeX --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css&quot; integrity=&quot;sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js&quot; integrity=&quot;sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Finally add this to the theme&rsquo;s footer:</p>
+
+<pre><code>&lt;script&gt;
+  function renderMath(nodes, displayMode) {
+    for (i = 0; i &lt; nodes.length; i++) {
+      let n = nodes[i];
+      katex.render(n.innerText, n, {displayMode: displayMode})
+    }
+  }
+
+  renderMath(document.querySelectorAll('.math-block'), true);
+  renderMath(document.querySelectorAll('.math-inline'), false);
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<p>Here is an example of how it will look once it&rsquo;s rendering the example above of how we&rsquo;d like things to work.</p>
+
+<p>The constant 
+<span class="math-inline">\pi</span>
+
+ is useful when working with circles.</p>
+
+<p>The Definition of n choose k: 
+<div class="math-block">{n \choose k} = \frac{n!}{k!(n - k)!}</div>
+
+</p></div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="/tags/hugo/">hugo</a></li>
+      
+      <li><a href="/tags/katex/">katex</a></li>
+      
+      <li><a href="/tags/latex/">latex</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+</article>
+</main>
+<script src="https://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  hljs.initHighlightingOnLoad();
+  menuToggle();
+  InstantClick.on('change', function() {
+    var blocks = document.querySelectorAll('pre code');
+    for (var i = 0; i < blocks.length; i++) {
+      hljs.highlightBlock(blocks[i]);
+    }
+    menuToggle();
+  });
+  function menuToggle() {
+    var $toggle = document.querySelector('.menu-toggle');
+    if (!$toggle.offsetParent) {
+      return;
+    }
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
+  <script>
+    function renderMath(nodes, displayMode) {
+      for (i = 0; i < nodes.length; i++) {
+        let n = nodes[i];
+        katex.render(n.innerText, n, {displayMode: displayMode})
+      }
+    }
+
+    renderMath(document.querySelectorAll('.math-block'), true);
+    renderMath(document.querySelectorAll('.math-inline'), false);
+  </script>
+</body>
+</html>
+
