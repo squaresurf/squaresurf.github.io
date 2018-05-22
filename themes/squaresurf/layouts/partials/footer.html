@@ -30,5 +30,16 @@
     }, false);
   }
 </script>
+  <script>
+    function renderMath(nodes, displayMode) {
+      for (i = 0; i < nodes.length; i++) {
+        let n = nodes[i];
+        katex.render(n.innerText, n, {displayMode: displayMode})
+      }
+    }
+
+    renderMath(document.querySelectorAll('.math-block'), true);
+    renderMath(document.querySelectorAll('.math-inline'), false);
+  </script>
 </body>
 </html>

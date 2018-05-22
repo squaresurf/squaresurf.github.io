@@ -1,0 +1,5 @@
+{{if eq (.Get 0) "block"}}
+<div class="math-block">{{.Inner}}</div>
+{{else}}
+<span class="math-inline">{{.Inner}}</span>
+{{end}}
